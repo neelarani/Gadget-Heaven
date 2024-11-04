@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar/Navbar';
 
 const MainLayout = () => {
   return (
-    <div className="font-sora">
+    <div className="font-sora bg-gradient-to-t from-pink-50 to-sky-50">
       {/* navbar */}
       <Navbar></Navbar>
       {/* dynamic section */}

@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="bg-[#9538E2] py-5">
+    <nav className="bg-[#9538E2] backdrop-blur-3xl top-0 sticky z-10 py-5">
       <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -26,18 +26,54 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-white"
             >
-              <Link to={'/'}>Home</Link>
-              <Link to={'/statistics'}>Statistics</Link>
-              <Link to={'/dashboard'}>Dashboard</Link>
+              <NavLink
+                className={({ isActive }) =>
+                  `${isActive ? '  text-black' : ''}`
+                }
+                to={'/'}
+              >
+                Home
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  `${isActive ? '  text-black' : ''}`
+                }
+                to={'/statistics'}
+              >
+                Statistics
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  `${isActive ? '  text-black' : ''}`
+                }
+                to={'/dashboard'}
+              >
+                Dashboard
+              </NavLink>
             </ul>
           </div>
           <a className=" text-xl text-white">Gadget Heaven</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 gap-8 text-base font-medium text-white">
-            <Link to={'/'}>Home</Link>
-            <Link to={'/statistics'}>Statistics</Link>
-            <Link to={'/dashboard'}>Dashboard</Link>
+            <NavLink
+              className={({ isActive }) => `${isActive ? '  text-black' : ''}`}
+              to={'/'}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              className={({ isActive }) => `${isActive ? '  text-black' : ''}`}
+              to={'/statistics'}
+            >
+              Statistics
+            </NavLink>
+            <NavLink
+              className={({ isActive }) => `${isActive ? '  text-black' : ''}`}
+              to={'/dashboard'}
+            >
+              Dashboard
+            </NavLink>
           </ul>
         </div>
         <div className="navbar-end gap-4">

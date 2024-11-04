@@ -5,8 +5,8 @@ export default function Mycard({ items }) {
       <img className="h-36 w-full" src={product_image} alt="" />
       <h2>{product_title}</h2>
       <p className="flex-grow">price : {price} Tk</p>
-      <button className="px-5 py-1 w-fit border border-blue-500 rounded-full">
-        See Inofo
+      <button className="px-5 py-1 w-fit border border-purple-500 text-purple-500 rounded-full">
+        View Details
       </button>
     </div>
   );

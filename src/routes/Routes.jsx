@@ -8,6 +8,8 @@ import AllCatagorys from '../pages/Categorys/AllCatagorys';
 import Laptop from '../pages/Categorys/Laptop';
 import Phones from '../pages/Categorys/Phones';
 import Iphones from '../pages/Categorys/Iphones';
+import Chargers from '../pages/Categorys/Chargers';
+import PowerBank from '../pages/Categorys/PowerBank';
 
 const routes = createBrowserRouter([
   {
@@ -43,6 +45,16 @@ const routes = createBrowserRouter([
             loader: () => fetch('../gadgetData.json'),
 
             element: <Iphones></Iphones>,
+          },
+          {
+            path: '/chargers',
+            loader: () => fetch('../gadgetData.json'),
+            element: <Chargers></Chargers>,
+          },
+          {
+            path: '/powerbank',
+            loader: () => fetch('../gadgetData.json'),
+            element: <PowerBank></PowerBank>,
           },
         ],
       },

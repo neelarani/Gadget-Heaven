@@ -2,7 +2,7 @@ import banner from '../../assets/images/banner.jpg';
 const Banner = () => {
   return (
     <div className="">
-      <div className="bg-[#9538E2] min-h-[400px] py-7 text-white flex flex-col justify-center items-center space-y-4">
+      <div className="bg-[#9538E2] min-h-[400px] py-7 z-10 text-white flex flex-col justify-center items-center space-y-4">
         <h2 className="text-3xl text-center">
           Upgrade Your Tech Accessorize with <br /> Gadget Heaven Accessories
         </h2>
@@ -14,9 +14,9 @@ const Banner = () => {
           Shop Now
         </button>
       </div>
-      <div className="relative bottom-24 z-50">
+      <div className="relative bottom-24 z-50 ">
         <img
-          className="container mx-auto h-[550px] rounded-xl"
+          className="container mx-auto h-[550px] rounded-xl  border-white/30 border-8 border-b-0"
           src={banner}
           alt=""
         />

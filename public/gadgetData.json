@@ -19,58 +19,60 @@
   },
   {
     "product_id": 2,
-    "product_title": "Apple iPhone 14",
-    "product_image": "https://i.ibb.co.com/pLsdvhy/phone-2.jpg",
-    "category": "Smartphone",
-    "price": 23999,
-    "description": "Apple iPhone 14 with advanced dual-camera system and A15 Bionic chip.",
+    "product_title": "Apple MacBook Air M2",
+    "product_image": "https://i.ibb.co.com/7W8wgg9/lap-1.jpg",
+    "category": "Laptop",
+    "price": 38400,
+    "description": "Apple MacBook Air with M2 chip, 8GB RAM, and 256GB SSD storage.",
     "Specification": [
-      "6.1-inch Super Retina XDR display",
-      "A15 Bionic chip",
-      "12MP Dual Camera System",
-      "Battery life up to 20 hours",
-      "5G Capable"
+      "13.6-inch Liquid Retina display",
+      "Apple M2 chip",
+      "8GB Unified Memory",
+      "256GB SSD",
+      "Up to 18 hours of battery life"
     ],
     "availability": true,
-    "rating": 4.7,
-    "Other_field": "Color Options: Midnight, Starlight, Blue, Purple"
+    "rating": 4.9,
+    "Other_field": "Color Options: Space Gray, Silver, Starlight, Midnight"
   },
+
   {
     "product_id": 3,
-    "product_title": "Google Pixel 7",
-    "product_image": "https://i.ibb.co.com/BT97gD7/phone-3.jpg",
-    "category": "Smartphone",
-    "price": 35000,
-    "description": "Google Pixel 7 with the best camera technology and pure Android experience.",
+    "product_title": "Anker PowerPort III Nano",
+    "product_image": "https://i.ibb.co.com/Fw53mFt/char-1.jpg",
+    "category": "Charger",
+    "price": 6700,
+    "description": "Anker PowerPort III Nano with fast charging technology for smartphones and tablets.",
     "Specification": [
-      "6.3-inch FHD+ OLED display",
-      "Google Tensor G2 chip",
-      "50MP + 12MP Dual Camera",
-      "4355mAh Battery",
-      "5G Support"
-    ],
-    "availability": false,
-    "rating": 4.5,
-    "Other_field": "Color Options: Obsidian, Snow, Lemongrass"
-  },
-  {
-    "product_id": 4,
-    "product_title": "OnePlus 11",
-    "product_image": "https://i.ibb.co.com/Syk9JLg/phone-4.jpg",
-    "category": "Smartphone",
-    "price": 27490,
-    "description": "OnePlus 11 with a powerful Snapdragon 8 Gen 2 chip and fast charging.",
-    "Specification": [
-      "6.7-inch Fluid AMOLED display",
-      "Snapdragon 8 Gen 2",
-      "50MP + 48MP + 32MP Triple Camera",
-      "5000mAh Battery",
-      "80W Fast Charging"
+      "20W USB-C power delivery",
+      "Compact design",
+      "Supports iPhone and Android devices",
+      "Overcharge protection"
     ],
     "availability": true,
-    "rating": 4.6,
-    "Other_field": "Color Options: Titan Black, Marble White"
+    "rating": 4.8,
+    "Other_field": "Color: White"
   },
+
+  {
+    "product_id": 4,
+    "product_title": "Amazfit GTR 4",
+    "product_image": "https://i.ibb.co.com/YL38tqj/watch-3.jpg",
+    "category": "Smart Watch",
+    "price": 23000,
+    "description": "Amazfit GTR 4 with an ultra-long battery life and sleek design.",
+    "Specification": [
+      "1.39-inch AMOLED display",
+      "GPS tracking",
+      "24-day battery life",
+      "Heart rate monitor",
+      "Water-resistant up to 50 meters"
+    ],
+    "availability": true,
+    "rating": 4.4,
+    "Other_field": "Includes voice assistant support"
+  },
+
   {
     "product_id": 5,
     "product_title": "Xiaomi 13 Pro",
@@ -110,22 +112,23 @@
 
   {
     "product_id": 7,
-    "product_title": "Apple MacBook Air M2",
-    "product_image": "https://i.ibb.co.com/7W8wgg9/lap-1.jpg",
-    "category": "Laptop",
-    "price": 38400,
-    "description": "Apple MacBook Air with M2 chip, 8GB RAM, and 256GB SSD storage.",
+    "product_title": "Apple iPhone 14",
+    "product_image": "https://i.ibb.co.com/pLsdvhy/phone-2.jpg",
+    "category": "Smartphone",
+    "price": 23999,
+    "description": "Apple iPhone 14 with advanced dual-camera system and A15 Bionic chip.",
     "Specification": [
-      "13.6-inch Liquid Retina display",
-      "Apple M2 chip",
-      "8GB Unified Memory",
-      "256GB SSD",
-      "Up to 18 hours of battery life"
+      "6.1-inch Super Retina XDR display",
+      "A15 Bionic chip",
+      "12MP Dual Camera System",
+      "Battery life up to 20 hours",
+      "5G Capable"
     ],
     "availability": true,
-    "rating": 4.9,
-    "Other_field": "Color Options: Space Gray, Silver, Starlight, Midnight"
+    "rating": 4.7,
+    "Other_field": "Color Options: Midnight, Starlight, Blue, Purple"
   },
+
   {
     "product_id": 8,
     "product_title": "Dell XPS 13",
@@ -254,40 +257,40 @@
     "Other_field": "Includes maps and music storage"
   },
   {
-    "product_id": 15,
-    "product_title": "Amazfit GTR 4",
-    "product_image": "https://i.ibb.co.com/YL38tqj/watch-3.jpg",
-    "category": "Smart Watch",
-    "price": 23000,
-    "description": "Amazfit GTR 4 with an ultra-long battery life and sleek design.",
+    "product_id": 4,
+    "product_title": "OnePlus 11",
+    "product_image": "https://i.ibb.co.com/Syk9JLg/phone-4.jpg",
+    "category": "Smartphone",
+    "price": 27490,
+    "description": "OnePlus 11 with a powerful Snapdragon 8 Gen 2 chip and fast charging.",
     "Specification": [
-      "1.39-inch AMOLED display",
-      "GPS tracking",
-      "24-day battery life",
-      "Heart rate monitor",
-      "Water-resistant up to 50 meters"
+      "6.7-inch Fluid AMOLED display",
+      "Snapdragon 8 Gen 2",
+      "50MP + 48MP + 32MP Triple Camera",
+      "5000mAh Battery",
+      "80W Fast Charging"
     ],
     "availability": true,
-    "rating": 4.4,
-    "Other_field": "Includes voice assistant support"
+    "rating": 4.6,
+    "Other_field": "Color Options: Titan Black, Marble White"
   },
-
   {
     "product_id": 16,
-    "product_title": "Anker PowerPort III Nano",
-    "product_image": "https://i.ibb.co.com/Fw53mFt/char-1.jpg",
-    "category": "Charger",
-    "price": 6700,
-    "description": "Anker PowerPort III Nano with fast charging technology for smartphones and tablets.",
+    "product_title": "Google Pixel 7",
+    "product_image": "https://i.ibb.co.com/BT97gD7/phone-3.jpg",
+    "category": "Smartphone",
+    "price": 35000,
+    "description": "Google Pixel 7 with the best camera technology and pure Android experience.",
     "Specification": [
-      "20W USB-C power delivery",
-      "Compact design",
-      "Supports iPhone and Android devices",
-      "Overcharge protection"
+      "6.3-inch FHD+ OLED display",
+      "Google Tensor G2 chip",
+      "50MP + 12MP Dual Camera",
+      "4355mAh Battery",
+      "5G Support"
     ],
-    "availability": true,
-    "rating": 4.8,
-    "Other_field": "Color: White"
+    "availability": false,
+    "rating": 4.5,
+    "Other_field": "Color Options: Obsidian, Snow, Lemongrass"
   },
   {
     "product_id": 17,

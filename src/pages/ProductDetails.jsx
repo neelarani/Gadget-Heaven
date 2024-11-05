@@ -1,8 +1,13 @@
-import { useLoaderData, NavLink, useParams } from 'react-router-dom';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
+
+import { useLoaderData, useParams } from 'react-router-dom';
 
 const ProductDetails = () => {
   const { productId } = useParams();
   const products = useLoaderData();
+
+  const [addItems, setAddItems] = useState([]);
 
   const product = products.find(
     item => String(item.product_id) === String(productId)
@@ -11,6 +16,23 @@ const ProductDetails = () => {
   if (!product) {
     return <p>Product not Found</p>;
   }
+
+  const addToCard = () => {
+    let productExists = false;
+    for (let i = 0; i < addItems.length; i++) {
+      if (addItems[i].product_id === product.product_id) {
+        productExists = true;
+        break;
+      }
+    }
+
+    if (!productExists) {
+      setAddItems([...addItems, product]);
+      toast.success(`${title} has been added to your card`);
+    } else {
+      toast.error(`${title} already in your card`);
+    }
+  };
 
   const {
     product_image: image,
@@ -68,15 +90,15 @@ const ProductDetails = () => {
             {rating}
           </p>
           <div className="flex gap-3 items-center">
-            <NavLink
-              to={'/addtocard'}
+            <button
+              onClick={addToCard}
               className={
                 'bg-purple-500 px-3 py-1 rounded-full text-white text-xs'
               }
             >
               Add To Card
               <i className="fa-solid fa-cart-shopping ml-2"></i>
-            </NavLink>
+            </button>
             <p className="px-2 py-1 rounded-full border-[1px] border-gray-500">
               <i className="fa-regular fa-heart text-purple-900"></i>
             </p>

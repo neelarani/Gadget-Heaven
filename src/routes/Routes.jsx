@@ -10,6 +10,7 @@ import Phones from '../pages/Categorys/Phones';
 import Iphones from '../pages/Categorys/Iphones';
 import Chargers from '../pages/Categorys/Chargers';
 import PowerBank from '../pages/Categorys/PowerBank';
+import ProductDetails from '../pages/ProductDetails';
 
 const routes = createBrowserRouter([
   {
@@ -66,6 +67,11 @@ const routes = createBrowserRouter([
       {
         path: '/dashboard',
         element: <Dashboard></Dashboard>,
+      },
+      {
+        path: '/products/:productId',
+        loader: () => fetch('../gadgetData.json'),
+        element: <ProductDetails></ProductDetails>,
       },
     ],
   },

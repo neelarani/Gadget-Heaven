@@ -14,7 +14,7 @@ const Banner = () => {
           Shop Now
         </button>
       </div>
-      <div className="relative bottom-24 z-50 ">
+      <div className="relative bottom-24 z-10 ">
         <img
           className="container mx-auto h-[550px] rounded-xl  border-white/30 border-8 border-b-0"
           src={banner}

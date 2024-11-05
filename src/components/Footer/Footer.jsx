@@ -1,12 +1,12 @@
 const Footer = () => {
   return (
-    <footer className=" bg-neutral text-white py-6 space-y-3">
+    <footer className=" bg-white text-black py-2 space-y-3 mt-8">
       <h3 className="text-center text-xl">Gadget Heaven</h3>
-      <p className="text-center text-sm text-gray-400">
+      <p className="text-center text-sm ">
         Leading the way in cutting-edge technology and innovation.
       </p>
       <div className="border-gray-500 border-b-[1px] container mx-auto"></div>
-      <div className="footer text-neutral-content p-10">
+      <div className="footer py-4 container mx-auto flex flex-col md:flex-row justify-center gap-x-32">
         <nav>
           <h6 className="footer-title">Services</h6>
           <a className="link link-hover">Branding</a>

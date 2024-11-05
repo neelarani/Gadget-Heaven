@@ -11,6 +11,7 @@ const ProductDetails = () => {
   const [addWishList, setAddWishList] = useState([]);
   const { count, setCount } = useContext(CartContext) || {};
   const { wishList, setWishList } = useContext(CartContext) || {};
+  const { addedCart, setAddedCart } = useContext(CartContext);
 
   const product = products.find(
     item => String(item.product_id) === String(productId)
@@ -22,14 +23,18 @@ const ProductDetails = () => {
 
   // Handle cart function
 
-  const addToCard = () => {
+  const addToCard = items => {
     let productExists = false;
-    for (let i = 0; i < addItems.length; i++) {
-      if (addItems[i].product_id === product.product_id) {
+    for (let i = 0; i < addedCart.length; i++) {
+      // console.log(items.product_id);
+      if (addedCart[i].product_id === items.product_id) {
+        setAddedCart([...addedCart, items]);
+
         productExists = true;
         break;
       }
     }
+    console.log(addedCart);
 
     if (!productExists) {
       setAddItems([...addItems, product]);
@@ -100,28 +105,28 @@ const ProductDetails = () => {
             <p className="text-sm font-bold">Rating </p>
             <div className="w-3 h-3  bg-black"></div>
           </div>
-          <p className="text-sm">
-            <div className="rating rating-xs">
-              {[1, 2, 3, 4, 5].map(star => (
-                <input
-                  key={star}
-                  type="radio"
-                  name="rating"
-                  className="mask mask-star-2 bg-orange-400"
-                  defaultChecked={star <= rating}
-                />
-              ))}
-            </div>
-            {rating}
-          </p>
+
+          <div className="rating rating-xs text-sm">
+            {[1, 2, 3, 4, 5].map(star => (
+              <input
+                key={star}
+                type="radio"
+                name="rating"
+                className="mask mask-star-2 bg-orange-400"
+                defaultChecked={star <= rating}
+              />
+            ))}
+          </div>
+          {rating}
+
           <div className="flex gap-3 items-center">
             <button
-              onClick={addToCard}
+              onClick={() => addToCard(product)}
               className={
                 'bg-purple-500 px-3 py-1 rounded-full text-white text-xs'
               }
             >
-              Add To Card
+              Add To Cart
               <i className="fa-solid fa-cart-shopping ml-2"></i>
             </button>
             <button

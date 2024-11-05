@@ -10,9 +10,19 @@ export const CartContext = createContext();
 const MainLayout = () => {
   const [count, setCount] = useState(0);
   const [wishList, setWishList] = useState(0);
+  const [addedCart, setAddedCart] = useState([]);
 
   return (
-    <CartContext.Provider value={{ count, setCount, wishList, setWishList }}>
+    <CartContext.Provider
+      value={{
+        count,
+        setCount,
+        wishList,
+        setWishList,
+        addedCart,
+        setAddedCart,
+      }}
+    >
       <div className="font-sora bg-gradient-to-t from-pink-50 to-sky-50">
         <Toaster />
         {/* navbar */}

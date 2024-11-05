@@ -1,13 +1,16 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 
 import { useLoaderData, useParams } from 'react-router-dom';
+import { CartContext } from '../layouts/MainLayout';
 
 const ProductDetails = () => {
   const { productId } = useParams();
   const products = useLoaderData();
-
   const [addItems, setAddItems] = useState([]);
+  const [addWishList, setAddWishList] = useState([]);
+  const { count, setCount } = useContext(CartContext) || {};
+  const { wishList, setWishList } = useContext(CartContext) || {};
 
   const product = products.find(
     item => String(item.product_id) === String(productId)
@@ -16,6 +19,8 @@ const ProductDetails = () => {
   if (!product) {
     return <p>Product not Found</p>;
   }
+
+  // Handle cart function
 
   const addToCard = () => {
     let productExists = false;
@@ -28,6 +33,7 @@ const ProductDetails = () => {
 
     if (!productExists) {
       setAddItems([...addItems, product]);
+      setCount(count + 1);
       toast.success(`${title} has been added to your card`);
     } else {
       toast.error(`${title} already in your card`);
@@ -42,6 +48,25 @@ const ProductDetails = () => {
     Specification,
     rating,
   } = product || {};
+
+  // Wish List Cart
+  const handleWishList = () => {
+    let productExists = false;
+    for (let i = 0; i < addWishList.length; i++) {
+      if (addWishList[i].product_id === product.product_id) {
+        productExists = true;
+        break;
+      }
+    }
+
+    if (!productExists) {
+      setAddWishList([...addWishList, product]);
+      setWishList(wishList + 1);
+      toast.success(`${title} has been added to your wishlist`);
+    } else {
+      toast.error(`${title} is already in your wishlist`);
+    }
+  };
 
   return (
     <div className="font-sora bg-pink-50">
@@ -99,9 +124,12 @@ const ProductDetails = () => {
               Add To Card
               <i className="fa-solid fa-cart-shopping ml-2"></i>
             </button>
-            <p className="px-2 py-1 rounded-full border-[1px] border-gray-500">
+            <button
+              onClick={handleWishList}
+              className="px-2 py-1 rounded-full border-[1px] border-gray-500"
+            >
               <i className="fa-regular fa-heart text-purple-900"></i>
-            </p>
+            </button>
           </div>
         </div>
       </div>

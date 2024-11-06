@@ -43,9 +43,9 @@ const Dashboard = () => {
                 ? 'bg-white text-purple-700'
                 : ' text-white border-white border-[1px]'
             } px-3 py-1 rounded-full text-sm font-bold`}
-          ></button>
-          <button className=" text-white border-white border-[1px] px-3 py-1 rounded-full text-sm font-bold">
-            Wishlist
+          >
+            {' '}
+            Wish List
           </button>
         </div>
       </div>
@@ -73,17 +73,6 @@ const Dashboard = () => {
 
       <div className="container mx-auto py-7">
         {activeTab === 'cart' ? <Cart></Cart> : <WishList></WishList>}
-      </div>
-
-      <h3 className="text-lg font-bold">Cart</h3>
-      <div className="flex gap-12 items-center">
-        <h3 className="text-sm font-semibold">Total Cost:</h3>
-        <button className="font-semibold text-purple-500 border-[1px] border-purple-600 text-sm px-3 py-1 rounded-full">
-          Sort by Price
-        </button>
-        <button className="font-semibold text-white  text-sm px-4 py-1 bg-purple-500  rounded-full">
-          Purchase
-        </button>
       </div>
 
       {/* <Outlet></Outlet> */}

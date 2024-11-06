@@ -35,6 +35,7 @@ const Dashboard = () => {
   const handleSortByPrice = () => {
     const sortedPrice = [...addedCart].sort((a, b) => b.price - a.price);
     setAddedCart(sortedPrice);
+    toast.success(`sorted successfully`);
   };
 
   return (

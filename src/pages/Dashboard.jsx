@@ -14,13 +14,10 @@ const Dashboard = () => {
   let navigate = useNavigate();
 
   let clearAllInfo = () => {
-    if (addedCart.length > 0) {
-      navigate('/');
-      setAddedCart([]);
-      toast.success(`payment successfully completed!`);
-    } else {
-      toast.error(`No items in the cart to purchase.`);
-    }
+    navigate(-1);
+    setAddedCart([]);
+
+    toast.success('Payment successfully');
   };
 
   useEffect(() => {
@@ -82,15 +79,20 @@ const Dashboard = () => {
             <h3 className="text-sm font-semibold">Total Cost: {price}</h3>
             <button
               onClick={() => handleSortByPrice()}
-              className="text-purple-600 border-[1px] border-black rounded-full px-3 py-1 font-semibold text-sm "
+              className="text-purple-600 border-[1px] border-black rounded-full px-3 py-1 font-semibold text-sm hover:bg-purple-500 hover:text-white "
             >
               Sort by Price
             </button>
 
             {/* Open the modal using document.getElementById('ID').showModal() method */}
             <button
-              className="px-4 py-1  bg-purple-500 text-white rounded-full"
+              className={`px-4 py-1 rounded-full ${
+                addedCart.length === 0
+                  ? 'bg-white text-black  border-[1px] border-black'
+                  : ' bg-purple-500 text-white '
+              }`}
               onClick={() => document.getElementById('my_modal_1').showModal()}
+              disabled={addedCart.length === 0}
             >
               Purchase
             </button>

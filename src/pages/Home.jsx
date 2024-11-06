@@ -20,7 +20,7 @@ const Home = () => {
                 isActive ? 'bg-purple-500 text-white' : 'bg-gray-200'
               }  w-full px-4 py-1 rounded-full`
             }
-            to="/"
+            to="/all"
           >
             All Products
           </NavLink>

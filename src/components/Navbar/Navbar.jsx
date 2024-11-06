@@ -5,10 +5,10 @@ const Navbar = ({ countCart, addedWishListCount }) => {
 
   const navColor =
     pageLocation.pathname === '/statistics' ||
-    pageLocation.pathname === '/dashboard'
-      ? 'bg-white text-purple-700' // Navbar will be white with purple text
-      : 'bg-[#9538E2] text-white'; // Navbar will be purple with white text
-
+    pageLocation.pathname === '/dashboard' ||
+    pageLocation.pathname === '/about'
+      ? 'bg-white text-purple-700'
+      : 'bg-[#9538E2] text-white';
   return (
     <nav className={`${navColor} backdrop-blur-3xl top-0 sticky z-50 py-1`}>
       <div className="navbar container mx-auto">
@@ -81,6 +81,12 @@ const Navbar = ({ countCart, addedWishListCount }) => {
               to={'/dashboard'}
             >
               Dashboard
+            </NavLink>
+            <NavLink
+              className={({ isActive }) => `${isActive ? 'text-black' : ''}`}
+              to={'/about'}
+            >
+              About us
             </NavLink>
           </ul>
         </div>

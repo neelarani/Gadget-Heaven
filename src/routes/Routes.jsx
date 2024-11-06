@@ -11,12 +11,15 @@ import Iphones from '../pages/Categorys/Iphones';
 import Chargers from '../pages/Categorys/Chargers';
 import PowerBank from '../pages/Categorys/PowerBank';
 import ProductDetails from '../pages/ProductDetails';
-import ProductsReview from '../pages/ProductsReview';
+import AboutUs from '../pages/AboutUs/AboutUs';
+import Data from '../pages/Categorys/Data';
 
 const routes = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout></MainLayout>,
+    errorElement: <h1>Page Not Found</h1>,
+
     children: [
       {
         path: '/',
@@ -25,6 +28,11 @@ const routes = createBrowserRouter([
         children: [
           {
             path: '/',
+            element: <Data></Data>,
+            loader: () => fetch('../gadgetData.json'),
+          },
+          {
+            path: '/all',
             loader: () => fetch('../gadgetData.json'),
             element: <AllCatagorys></AllCatagorys>,
           },
@@ -70,8 +78,8 @@ const routes = createBrowserRouter([
         element: <Dashboard></Dashboard>,
       },
       {
-        path: '/review',
-        element: <ProductsReview></ProductsReview>,
+        path: '/about',
+        element: <AboutUs></AboutUs>,
       },
       {
         path: '/products/:productId',

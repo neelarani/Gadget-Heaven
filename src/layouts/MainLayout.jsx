@@ -11,10 +11,7 @@ const MainLayout = () => {
   const [count, setCount] = useState(0);
   const [wishList, setWishList] = useState(0);
   const [addedCart, setAddedCart] = useState([]);
-<<<<<<< HEAD
   const [addedWishList, setAddedWishList] = useState([]);
-=======
->>>>>>> c91a3c9f97a99fe6ee71aaa89f8bdb12316270b2
 
   return (
     <CartContext.Provider
@@ -25,11 +22,8 @@ const MainLayout = () => {
         setWishList,
         addedCart,
         setAddedCart,
-<<<<<<< HEAD
         addedWishList,
         setAddedWishList,
-=======
->>>>>>> c91a3c9f97a99fe6ee71aaa89f8bdb12316270b2
       }}
     >
       <div className="font-sora bg-gradient-to-t from-pink-50 to-sky-50">

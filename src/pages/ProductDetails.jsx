@@ -12,10 +12,8 @@ const ProductDetails = () => {
   const { count, setCount } = useContext(CartContext) || {};
   const { wishList, setWishList } = useContext(CartContext) || {};
   const { addedCart, setAddedCart } = useContext(CartContext);
-<<<<<<< HEAD
+
   const { addedWishList, setAddedWishList } = useContext(CartContext);
-=======
->>>>>>> c91a3c9f97a99fe6ee71aaa89f8bdb12316270b2
 
   const product = products.find(
     item => String(item.product_id) === String(productId)
@@ -28,24 +26,10 @@ const ProductDetails = () => {
   // Handle cart function
 
   const addToCard = items => {
-<<<<<<< HEAD
     // Filter to see if the product already exists in the cart
     const existingProducts = addedCart.filter(
       cartItem => cartItem.product_id === items.product_id
     );
-=======
-    let productExists = false;
-    for (let i = 0; i < addedCart.length; i++) {
-      // console.log(items.product_id);
-      if (addedCart[i].product_id === items.product_id) {
-        setAddedCart([...addedCart, items]);
-
-        productExists = true;
-        break;
-      }
-    }
-    console.log(addedCart);
->>>>>>> c91a3c9f97a99fe6ee71aaa89f8bdb12316270b2
 
     if (existingProducts.length === 0) {
       // Product does not exist, so add it to the cart
@@ -63,14 +47,10 @@ const ProductDetails = () => {
     const existingProductsWishList = addedWishList.filter(
       wishListItem => wishListItem.product_id === items.product_id
     );
-    // console.log(items);
 
     if (existingProductsWishList.length === 0) {
       setAddedWishList([...addedWishList, items]);
-      console.log(addedWishList);
       setAddWishList([...addWishList, items]);
-      console.log(addedWishList);
-
       setWishList(wishList + 1);
       toast.success(`${items.product_title} has been added to your wishlist`);
     } else {

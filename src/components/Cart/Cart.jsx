@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import { CartContext } from '../../layouts/MainLayout';
 
-<<<<<<< HEAD
 const Cart = ({ handleSortByPrice }) => {
   const { addedCart, setAddedCart } = useContext(CartContext);
 
@@ -34,17 +33,6 @@ const Cart = ({ handleSortByPrice }) => {
             ></i>
           </div>
         ))}
-=======
-const Cart = () => {
-  const { addedCart } = useContext(CartContext);
-  return (
-    <div className="flex gap-5 container mx-auto py-7">
-      <div>image</div>
-      <div>
-        <h2></h2>
-        <p>description</p>
-        <p>Price:</p>
->>>>>>> c91a3c9f97a99fe6ee71aaa89f8bdb12316270b2
       </div>
     </div>
   );

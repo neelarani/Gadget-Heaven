@@ -23,7 +23,7 @@ const ProductDetails = () => {
     return <p>Product not Found</p>;
   }
 
-  // Handle cart function
+  // handle add to cart items
 
   const addToCard = items => {
     // Filter to see if the product already exists in the cart

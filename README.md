@@ -1,6 +1,10 @@
 ## Website Link
 
+[work-gadget-heaven.surge.sh]
+
 ## Requirement Document Link
+
+[https://github.com/ProgrammingHero1/B10-A8-gadget-heaven/blob/main/Batch-10_Assignment-08.pdf]
 
 ## List of React Fundamental concepts used in the project
 

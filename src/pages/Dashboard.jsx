@@ -15,11 +15,11 @@ const Dashboard = () => {
 
   let clearAllInfo = () => {
     if (addedCart.length > 0) {
+      navigate('/');
       setAddedCart([]);
       toast.success(`payment successfully completed!`);
     } else {
       toast.error(`No items in the cart to purchase.`);
-      navigate('/');
     }
   };
 

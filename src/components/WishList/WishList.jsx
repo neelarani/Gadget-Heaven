@@ -4,6 +4,7 @@ import toast from 'react-hot-toast';
 
 const WishList = () => {
   const { addedWishList, setAddedWishList } = useContext(CartContext);
+  const { addToCard } = useContext(CartContext);
 
   const handleDelete = index => {
     const updatedWishList = addedWishList.filter((_, i) => i !== index);
@@ -13,7 +14,7 @@ const WishList = () => {
   };
 
   return (
-    <div className="container mx-auto py-7">
+    <div className="container mx-auto py-7 font-sora">
       <div>
         {addedWishList.map((itmes, index) => (
           <div
@@ -25,10 +26,16 @@ const WishList = () => {
               key={index}
               src={itmes.product_image}
             ></img>
-            <div>
-              <p>{itmes.product_title}</p>
-              <p>{itmes.description}</p>
-              <p>Price: {itmes.price} Tk</p>
+            <div className="space-y-2 ">
+              <p className="text-lg font-bold">{itmes.product_title}</p>
+              <p className="text-sm font-medium">{itmes.description}</p>
+              <p className="text-sm font-medium">Price: {itmes.price} Tk</p>
+              <button
+                onClick={() => addToCard(itmes)}
+                className="bg-purple-500 text-white px-3 py-1 rounded-full text-sm"
+              >
+                Add to Card
+              </button>
             </div>
             <i
               onClick={() => handleDelete(index)}

@@ -11,6 +11,7 @@ import Iphones from '../pages/Categorys/Iphones';
 import Chargers from '../pages/Categorys/Chargers';
 import PowerBank from '../pages/Categorys/PowerBank';
 import ProductDetails from '../pages/ProductDetails';
+import ProductsReview from '../pages/ProductsReview';
 
 const routes = createBrowserRouter([
   {
@@ -67,6 +68,10 @@ const routes = createBrowserRouter([
       {
         path: '/dashboard',
         element: <Dashboard></Dashboard>,
+      },
+      {
+        path: '/review',
+        element: <ProductsReview></ProductsReview>,
       },
       {
         path: '/products/:productId',

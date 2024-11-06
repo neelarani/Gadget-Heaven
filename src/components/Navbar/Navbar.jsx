@@ -1,8 +1,16 @@
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 
 const Navbar = ({ countCart, addedWishListCount }) => {
+  let pageLocation = useLocation();
+
+  const navColor =
+    pageLocation.pathname === '/statistics' ||
+    pageLocation.pathname === '/dashboard'
+      ? 'bg-white text-purple-700' // Navbar will be white with purple text
+      : 'bg-[#9538E2] text-white'; // Navbar will be purple with white text
+
   return (
-    <nav className="bg-[#9538E2] backdrop-blur-3xl top-0 sticky z-50 py-1">
+    <nav className={`${navColor} backdrop-blur-3xl top-0 sticky z-50 py-1`}>
       <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -24,11 +32,11 @@ const Navbar = ({ countCart, addedWishListCount }) => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-white"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <NavLink
                 className={({ isActive }) =>
-                  `${isActive ? '  text-black' : ''}`
+                  `${isActive ? 'text-black' : 'text-purple-700'}`
                 }
                 to={'/'}
               >
@@ -36,7 +44,7 @@ const Navbar = ({ countCart, addedWishListCount }) => {
               </NavLink>
               <NavLink
                 className={({ isActive }) =>
-                  `${isActive ? '  text-black' : ''}`
+                  `${isActive ? 'text-black' : 'text-purple-700'}`
                 }
                 to={'/statistics'}
               >
@@ -44,7 +52,7 @@ const Navbar = ({ countCart, addedWishListCount }) => {
               </NavLink>
               <NavLink
                 className={({ isActive }) =>
-                  `${isActive ? '  text-black' : ''}`
+                  `${isActive ? 'text-black' : 'text-purple-700'}`
                 }
                 to={'/dashboard'}
               >
@@ -52,24 +60,24 @@ const Navbar = ({ countCart, addedWishListCount }) => {
               </NavLink>
             </ul>
           </div>
-          <a className=" text-xl text-white">Gadget Heaven</a>
+          <a className="text-xl">Gadget Heaven</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 gap-8 text-base font-medium text-white">
+          <ul className="menu menu-horizontal px-1 gap-8 text-base font-medium">
             <NavLink
-              className={({ isActive }) => `${isActive ? '  text-black' : ''}`}
+              className={({ isActive }) => `${isActive ? 'text-black' : ''}`}
               to={'/'}
             >
               Home
             </NavLink>
             <NavLink
-              className={({ isActive }) => `${isActive ? '  text-black' : ''}`}
+              className={({ isActive }) => `${isActive ? 'text-black' : ''}`}
               to={'/statistics'}
             >
               Statistics
             </NavLink>
             <NavLink
-              className={({ isActive }) => `${isActive ? '  text-black' : ''}`}
+              className={({ isActive }) => `${isActive ? 'text-black' : ''}`}
               to={'/dashboard'}
             >
               Dashboard
@@ -79,15 +87,15 @@ const Navbar = ({ countCart, addedWishListCount }) => {
         <div className="navbar-end gap-4">
           <Link className="rounded-full bg-gray-200 px-2 py-1 relative">
             <div>
-              <i className="fa-sharp fa-solid fa-cart-shopping"></i>
-              <span className="absolute -top-3 -right-0 bg-black text-xs px-1 rounded-full text-white">
+              <i className="fa-sharp fa-solid fa-cart-shopping text-black"></i>
+              <span className="absolute -top-3 -right-0 text-white bg-black text-xs px-1 rounded-full ">
                 {countCart}
               </span>
             </div>
           </Link>
           <Link className="rounded-full bg-gray-200 px-2 py-1">
             <div className="relative">
-              <i className="fa-regular fa-heart"></i>
+              <i className="fa-regular fa-heart text-black"></i>
               <span className="absolute -top-3 -right-3 bg-black text-xs px-1 rounded-full text-white">
                 {addedWishListCount}
               </span>

@@ -7,13 +7,14 @@ import { CartContext } from '../layouts/MainLayout';
 const ProductDetails = () => {
   const { productId } = useParams();
   const products = useLoaderData();
-  const [addItems, setAddItems] = useState([]);
+  // const [addItems, setAddItems] = useState([]);
   const [addWishList, setAddWishList] = useState([]);
   // const { count, setCount } = useContext(CartContext) || {};
   // const { wishList, setWishList } = useContext(CartContext) || {};
-  const { addedCart, setAddedCart } = useContext(CartContext);
+  // const { addedCart, setAddedCart } = useContext(CartContext);
 
   const { addedWishList, setAddedWishList } = useContext(CartContext);
+  const { addToCard } = useContext(CartContext);
 
   const product = products.find(
     item => String(item.product_id) === String(productId)
@@ -22,24 +23,6 @@ const ProductDetails = () => {
   if (!product) {
     return <p>Product not Found</p>;
   }
-
-  // handle add to cart items
-
-  const addToCard = items => {
-    // Filter to see if the product already exists in the cart
-    const existingProducts = addedCart.filter(
-      cartItem => cartItem.product_id === items.product_id
-    );
-
-    if (existingProducts.length === 0) {
-      // Product does not exist, so add it to the cart
-      setAddedCart([...addedCart, items]);
-      setAddItems([...addItems, items]);
-      toast.success(`${items.product_title} has been added to your cart`);
-    } else {
-      toast.error(`${items.product_title} is already in your cart`);
-    }
-  };
 
   // Wish List Cart
   const handleWishList = items => {

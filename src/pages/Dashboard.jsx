@@ -1,11 +1,34 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Cart from '../components/Cart/Cart';
 import WishList from '../components/WishList/WishList';
 import { CartContext } from '../layouts/MainLayout';
+import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const Dashboard = () => {
   const { addedCart, setAddedCart } = useContext(CartContext);
   const [activeTab, setActiveTab] = useState('cart');
+
+  let [price, setPrice] = useState(0);
+
+  let navigate = useNavigate();
+
+  let clearAllInfo = () => {
+    if (addedCart.length > 0) {
+      setAddedCart([]);
+      toast.success(`payment successfully completed!`);
+    } else {
+      toast.error(`No items in the cart to purchase.`);
+      navigate('/');
+    }
+  };
+
+  useEffect(() => {
+    for (let i = 0; i < addedCart.length; i++) {
+      let itemPrice = addedCart[i].price;
+      setPrice(price + itemPrice);
+    }
+  }, [addedCart]);
 
   const handleTabChange = tab => {
     setActiveTab(tab);
@@ -56,7 +79,7 @@ const Dashboard = () => {
         </h3>
         {activeTab === 'cart' && (
           <div className="flex gap-12 items-center">
-            <h3 className="text-sm font-semibold">Total Cost:</h3>
+            <h3 className="text-sm font-semibold">Total Cost: {price}</h3>
             <button
               onClick={() => handleSortByPrice()}
               className="text-purple-600 border-[1px] border-black rounded-full px-3 py-1 font-semibold text-sm "
@@ -64,9 +87,31 @@ const Dashboard = () => {
               Sort by Price
             </button>
 
-            <button className="font-semibold text-white  text-sm px-4 py-1 bg-purple-500  rounded-full">
+            {/* Open the modal using document.getElementById('ID').showModal() method */}
+            <button
+              className="px-4 py-1  bg-purple-500 text-white rounded-full"
+              onClick={() => document.getElementById('my_modal_1').showModal()}
+            >
               Purchase
             </button>
+            <dialog id="my_modal_1" className="modal">
+              <div className="modal-box flex flex-col justify-center items-center">
+                <h3 className="font-bold text-lg">Payment Successfully</h3>
+                <p className="py-4">Thanks for purchasing.</p>
+                <p className="text-base font-medium">Total: {price} Tk</p>
+                <div className="modal-action  justify-center">
+                  <form method="dialog ">
+                    {/* if there is a button in form, it will close the modal */}
+                    <button
+                      onClick={clearAllInfo}
+                      className="btn text-center w-full"
+                    >
+                      Close
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
           </div>
         )}
       </div>

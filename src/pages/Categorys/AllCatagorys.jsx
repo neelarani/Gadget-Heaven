@@ -3,7 +3,7 @@ import Mycard from '../DynamicCard/Mycard';
 
 export default function AllCatagorys() {
   let myData = useLoaderData();
-  let allData = myData.slice(0, 9);
+  let allData = myData;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-3">

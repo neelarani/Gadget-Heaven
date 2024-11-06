@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { CartContext } from '../../layouts/MainLayout';
+import toast from 'react-hot-toast';
 
 const Cart = ({ handleSortByPrice }) => {
   const { addedCart, setAddedCart } = useContext(CartContext);
@@ -7,6 +8,8 @@ const Cart = ({ handleSortByPrice }) => {
   const handleDelete = index => {
     const updatedCart = addedCart.filter((_, i) => i !== index);
     setAddedCart(updatedCart);
+
+    toast.success(`Item successfully removed from cart`);
   };
 
   return (

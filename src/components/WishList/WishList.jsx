@@ -1,12 +1,15 @@
 import { useContext } from 'react';
 import { CartContext } from '../../layouts/MainLayout';
+import toast from 'react-hot-toast';
 
 const WishList = () => {
   const { addedWishList, setAddedWishList } = useContext(CartContext);
 
   const handleDelete = index => {
     const updatedWishList = addedWishList.filter((_, i) => i !== index);
+
     setAddedWishList(updatedWishList);
+    toast.success(`Item successfully removed from wishlist`);
   };
 
   return (

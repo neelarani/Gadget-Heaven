@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useContext, useState } from 'react';
 import Cart from '../components/Cart/Cart';
 import WishList from '../components/WishList/WishList';
@@ -16,6 +17,11 @@ const Dashboard = () => {
     const sortedPrice = [...addedCart].sort((a, b) => b.price - a.price);
     setAddedCart(sortedPrice);
   };
+=======
+import { Outlet } from 'react-router-dom';
+
+const Dashboard = () => {
+>>>>>>> c91a3c9f97a99fe6ee71aaa89f8bdb12316270b2
   return (
     <div className="font-sora bg-pink-50 ">
       <div className="bg-[#9538E2] pt-16 pb-4 flex flex-col justify-center items-center text-white ">
@@ -25,6 +31,7 @@ const Dashboard = () => {
           level. From smart devices to the coolest accessories, we have it all!
         </p>
         <div className="flex items-center gap-3 mt-4 ">
+<<<<<<< HEAD
           <button
             onClick={() => handleTabChange('cart')}
             className={`${
@@ -43,12 +50,19 @@ const Dashboard = () => {
                 : ' text-white border-white border-[1px]'
             } px-3 py-1 rounded-full text-sm font-bold`}
           >
+=======
+          <button className="bg-white text-purple-700 px-5 py-1 rounded-full text-sm font-bold">
+            Cart
+          </button>
+          <button className=" text-white border-white border-[1px] px-3 py-1 rounded-full text-sm font-bold">
+>>>>>>> c91a3c9f97a99fe6ee71aaa89f8bdb12316270b2
             Wishlist
           </button>
         </div>
       </div>
 
       <div className="flex justify-between container mx-auto mt-9 text-black">
+<<<<<<< HEAD
         <h3 className="text-lg font-bold">
           {activeTab === 'cart' ? 'cart ' : 'wishlist'}
         </h3>
@@ -71,6 +85,21 @@ const Dashboard = () => {
       <div className="container mx-auto py-7">
         {activeTab === 'cart' ? <Cart></Cart> : <WishList></WishList>}
       </div>
+=======
+        <h3 className="text-lg font-bold">Cart</h3>
+        <div className="flex gap-12 items-center">
+          <h3 className="text-sm font-semibold">Total Cost:</h3>
+          <button className="font-semibold text-purple-500 border-[1px] border-purple-600 text-sm px-3 py-1 rounded-full">
+            Sort by Price
+          </button>
+          <button className="font-semibold text-white  text-sm px-4 py-1 bg-purple-500  rounded-full">
+            Purchase
+          </button>
+        </div>
+      </div>
+
+      <Outlet></Outlet>
+>>>>>>> c91a3c9f97a99fe6ee71aaa89f8bdb12316270b2
     </div>
   );
 };

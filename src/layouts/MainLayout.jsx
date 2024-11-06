@@ -8,18 +8,12 @@ import { createContext, useState } from 'react';
 export const CartContext = createContext();
 
 const MainLayout = () => {
-  const [count, setCount] = useState(0);
-  const [wishList, setWishList] = useState(0);
   const [addedCart, setAddedCart] = useState([]);
   const [addedWishList, setAddedWishList] = useState([]);
 
   return (
     <CartContext.Provider
       value={{
-        count,
-        setCount,
-        wishList,
-        setWishList,
         addedCart,
         setAddedCart,
         addedWishList,
@@ -29,7 +23,10 @@ const MainLayout = () => {
       <div className="font-sora bg-gradient-to-t from-pink-50 to-sky-50">
         <Toaster />
         {/* navbar */}
-        <Navbar></Navbar>
+        <Navbar
+          countCart={addedCart.length}
+          addedWishListCount={addedWishList.length}
+        ></Navbar>
         {/* dynamic section */}
         <div className="min-h-[calc(100vh-288px)]">
           <Outlet></Outlet>

@@ -1,10 +1,6 @@
-import { useContext } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { CartContext } from '../../layouts/MainLayout';
 
-const Navbar = () => {
-  const { count, wishList } = useContext(CartContext);
-
+const Navbar = ({ countCart, addedWishListCount }) => {
   return (
     <nav className="bg-[#9538E2] backdrop-blur-3xl top-0 sticky z-50 py-1">
       <div className="navbar container mx-auto">
@@ -85,7 +81,7 @@ const Navbar = () => {
             <div>
               <i className="fa-sharp fa-solid fa-cart-shopping"></i>
               <span className="absolute -top-3 -right-0 bg-black text-xs px-1 rounded-full text-white">
-                {count}
+                {countCart}
               </span>
             </div>
           </Link>
@@ -93,7 +89,7 @@ const Navbar = () => {
             <div className="relative">
               <i className="fa-regular fa-heart"></i>
               <span className="absolute -top-3 -right-3 bg-black text-xs px-1 rounded-full text-white">
-                {wishList}
+                {addedWishListCount}
               </span>
             </div>
           </Link>

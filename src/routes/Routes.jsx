@@ -11,7 +11,6 @@ import Iphones from '../pages/Categorys/Iphones';
 import Chargers from '../pages/Categorys/Chargers';
 import PowerBank from '../pages/Categorys/PowerBank';
 import ProductDetails from '../pages/ProductDetails';
-import Cart from '../components/Cart/Cart';
 
 const routes = createBrowserRouter([
   {
@@ -68,12 +67,6 @@ const routes = createBrowserRouter([
       {
         path: '/dashboard',
         element: <Dashboard></Dashboard>,
-        children: [
-          {
-            path: '/dashboard',
-            element: <Cart></Cart>,
-          },
-        ],
       },
       {
         path: '/products/:productId',

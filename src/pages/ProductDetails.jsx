@@ -9,8 +9,8 @@ const ProductDetails = () => {
   const products = useLoaderData();
   const [addItems, setAddItems] = useState([]);
   const [addWishList, setAddWishList] = useState([]);
-  const { count, setCount } = useContext(CartContext) || {};
-  const { wishList, setWishList } = useContext(CartContext) || {};
+  // const { count, setCount } = useContext(CartContext) || {};
+  // const { wishList, setWishList } = useContext(CartContext) || {};
   const { addedCart, setAddedCart } = useContext(CartContext);
 
   const { addedWishList, setAddedWishList } = useContext(CartContext);
@@ -35,7 +35,6 @@ const ProductDetails = () => {
       // Product does not exist, so add it to the cart
       setAddedCart([...addedCart, items]);
       setAddItems([...addItems, items]);
-      setCount(count + 1); // Update the count in the context
       toast.success(`${items.product_title} has been added to your cart`);
     } else {
       toast.error(`${items.product_title} is already in your cart`);
@@ -51,7 +50,6 @@ const ProductDetails = () => {
     if (existingProductsWishList.length === 0) {
       setAddedWishList([...addedWishList, items]);
       setAddWishList([...addWishList, items]);
-      setWishList(wishList + 1);
       toast.success(`${items.product_title} has been added to your wishlist`);
     } else {
       toast.error(`${items.product_title} is already in your wishlist`);

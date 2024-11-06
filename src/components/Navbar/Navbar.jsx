@@ -82,24 +82,20 @@ const Navbar = () => {
         </div>
         <div className="navbar-end gap-4">
           <Link className="rounded-full bg-gray-200 px-2 py-1 relative">
-            <p>
-              <div>
-                <i className="fa-sharp fa-solid fa-cart-shopping"></i>
-                <span className="absolute -top-3 -right-0 bg-black text-xs px-1 rounded-full text-white">
-                  {count}
-                </span>
-              </div>
-            </p>
+            <div>
+              <i className="fa-sharp fa-solid fa-cart-shopping"></i>
+              <span className="absolute -top-3 -right-0 bg-black text-xs px-1 rounded-full text-white">
+                {count}
+              </span>
+            </div>
           </Link>
           <Link className="rounded-full bg-gray-200 px-2 py-1">
-            <p>
-              <div className="relative">
-                <i className="fa-regular fa-heart"></i>
-                <span className="absolute -top-3 -right-3 bg-black text-xs px-1 rounded-full text-white">
-                  {wishList}
-                </span>
-              </div>
-            </p>
+            <div className="relative">
+              <i className="fa-regular fa-heart"></i>
+              <span className="absolute -top-3 -right-3 bg-black text-xs px-1 rounded-full text-white">
+                {wishList}
+              </span>
+            </div>
           </Link>
         </div>
       </div>

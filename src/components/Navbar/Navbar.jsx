@@ -58,6 +58,12 @@ const Navbar = ({ countCart, addedWishListCount }) => {
               >
                 Dashboard
               </NavLink>
+              <NavLink
+                className={({ isActive }) => `${isActive ? 'text-black' : ''}`}
+                to={'/about'}
+              >
+                About us
+              </NavLink>
             </ul>
           </div>
           <a className="text-xl">Gadget Heaven</a>

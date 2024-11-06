@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { CartContext } from '../../layouts/MainLayout';
 
-const Cart = () => {
+const Cart = ({ handleSortByPrice }) => {
   const { addedCart, setAddedCart } = useContext(CartContext);
 
   const handleDelete = index => {

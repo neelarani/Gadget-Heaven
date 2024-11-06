@@ -1,14 +1,21 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Cart from '../components/Cart/Cart';
 import WishList from '../components/WishList/WishList';
+import { CartContext } from '../layouts/MainLayout';
 
 const Dashboard = () => {
+  const { addedCart, setAddedCart } = useContext(CartContext);
   const [activeTab, setActiveTab] = useState('cart');
 
   const handleTabChange = tab => {
     setActiveTab(tab);
   };
 
+  // sorted price
+  const handleSortByPrice = () => {
+    const sortedPrice = [...addedCart].sort((a, b) => b.price - a.price);
+    setAddedCart(sortedPrice);
+  };
   return (
     <div className="font-sora bg-pink-50 ">
       <div className="bg-[#9538E2] pt-16 pb-4 flex flex-col justify-center items-center text-white ">
@@ -48,7 +55,10 @@ const Dashboard = () => {
         {activeTab === 'cart' && (
           <div className="flex gap-12 items-center">
             <h3 className="text-sm font-semibold">Total Cost:</h3>
-            <button className="font-semibold text-purple-500 border-[1px] border-purple-600 text-sm px-3 py-1 rounded-full">
+            <button
+              onClick={() => handleSortByPrice()}
+              className="text-purple-600 border-[1px] border-black rounded-full px-3 py-1 font-semibold text-sm "
+            >
               Sort by Price
             </button>
             <button className="font-semibold text-white  text-sm px-4 py-1 bg-purple-500  rounded-full">
